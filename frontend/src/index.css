@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body bg-sand-50 text-midnight-900 dark:bg-midnight-950 dark:text-sand-50 transition-colors duration-300;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-teal-500/40 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-teal-500/70; }
+
+/* Focus visibility for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #0FBFA6;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-glass;
+  }
+  .glass-light {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-glass;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-midnight-950 bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-600 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white bg-white/10 border border-white/25 backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:-translate-y-0.5;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-sunset-400 to-sunset-600 hover:from-sunset-500 hover:to-sunset-600 shadow-lg shadow-sunset-500/20 hover:shadow-sunset-500/40 transition-all duration-300 hover:-translate-y-0.5;
+  }
+  .section-eyebrow {
+    @apply inline-block text-xs font-semibold tracking-[0.2em] uppercase text-teal-500 dark:text-teal-400 mb-3;
+  }
+  .card {
+    @apply rounded-2xl bg-white dark:bg-midnight-800/60 border border-midnight-900/5 dark:border-white/10 shadow-sm hover:shadow-xl transition-shadow duration-300;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-white dark:bg-midnight-800 border border-midnight-900/10 dark:border-white/10 text-midnight-900 dark:text-sand-50 placeholder:text-midnight-900/40 dark:placeholder:text-sand-50/40 focus:ring-2 focus:ring-teal-500 outline-none transition-all;
+  }
+}
